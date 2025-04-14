@@ -1,4 +1,4 @@
-# rad-example-plugin
+# ToolsAPI Example for RAD Studio
 
 If you're just getting started with plugin development in RAD Studio, one of the first architectural decisions that you will face is
 choosing between using **BPLs** or **DLLs** for your plugin.
@@ -30,6 +30,7 @@ This hybrid workflow gives you the best of both worlds: productivity during deve
 
 ----
 
+![BPL & DLL](BPLDLL.png)
 
 ### Hybrid Example Projects
 
