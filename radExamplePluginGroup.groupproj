@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D8C9D587-1CA4-4AFF-812A-ACA8997C7383}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="BPL Project\radExampleBPLPlugin.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DLL Project\radExampleDLLPlugin.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="radExampleBPLPlugin">
+        <MSBuild Projects="BPL Project\radExampleBPLPlugin.dproj"/>
+    </Target>
+    <Target Name="radExampleBPLPlugin:Clean">
+        <MSBuild Projects="BPL Project\radExampleBPLPlugin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="radExampleBPLPlugin:Make">
+        <MSBuild Projects="BPL Project\radExampleBPLPlugin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="radExampleDLLPlugin">
+        <MSBuild Projects="DLL Project\radExampleDLLPlugin.dproj"/>
+    </Target>
+    <Target Name="radExampleDLLPlugin:Clean">
+        <MSBuild Projects="DLL Project\radExampleDLLPlugin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="radExampleDLLPlugin:Make">
+        <MSBuild Projects="DLL Project\radExampleDLLPlugin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="radExampleBPLPlugin;radExampleDLLPlugin"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="radExampleBPLPlugin:Clean;radExampleDLLPlugin:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="radExampleBPLPlugin:Make;radExampleDLLPlugin:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
