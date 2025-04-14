@@ -21,7 +21,7 @@ This tight coupling can quickly become a headache in larger systems or when mixi
 DLLs are a more traditional and language-agnostic way of building plugins. Unlike BPLs, DLLs don’t require the host and plugin to share units directly, which
 means no risk of unit name collisions.  The tradeoff is in developer ergonomics. DLLs are **harder to debug**, especially when you’re working inside RAD Studio.
 
-### Use Both!
+### It's Best To Use Both!
 
 A practical approach is to **develop and debug your plugin using a BPL**, where you can take advantage of integrated debugging
 and runtime type sharing. Once your plugin is stable, you **deploy it as a DLL** with a clean, defined interface, avoiding unit conflicts.
