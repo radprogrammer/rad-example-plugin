@@ -12,7 +12,7 @@
   - Run DLL project in your main debugging session
     (ignore the various startup errors which are expected when debugging an IDE instance with the IDE)
 
-  Its much easier to CREATE/DEBUG a BPL project
+  Its somewhat easier to CREATE/DEBUG a BPL project, and much easier to LOAD/UNLOAD a BPL
   Its much better to DEPLOY a DLL project due to unit name conflicts in BPLs
 }
 unit radExampleDLLPlugin.Loader;

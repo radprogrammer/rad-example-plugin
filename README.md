@@ -32,7 +32,9 @@ This hybrid workflow gives you the best of both worlds: productivity during deve
 
 ![BPL & DLL](BPLDLL.png)
 
-### Hybrid Example Projects
+## Hybrid Example Project
+
+`Project group found in: Examples\Create BPL and DLL`
 
 This hybrid workflow is demonstrated within this repository with the use of two very basic projects.  One project is a BPL, and one is a DLL and they both share common
 plugin implementation code.
@@ -59,14 +61,16 @@ _Note_ If you don't make the `designide` package available, you will get the ver
 
 
 ### Debugging tips
-- The BPL is easy...simply right click the project and select `Install`. If you need to remove it, then use `Component->Install Packages` select your BPL and click `Remove`.
-- The DLL is more difficult... configure your `Run->Parameters->Debugger->Target` settings to:
+- The BPL is a little easier as you can Load and Unload your BPL while your second copy of Delphi is running.  (Use `Component->Install Packages`)
+- The DLL is more difficult as the registry key needs to be present when the second copy of Delphi launches, but shouldn't be present when your
+first copy of Delphi is started. (Otherwise the DLL will be in use and you cannot update it to test changes.)
+
+- To debug, configure your `Run->Parameters->Debugger->Target` settings to:
     - Host Application: `$(BDS)\bin\bds.exe`
     - Parameters: `-pDelphi`
-- You can then run your DLL project and RAD Studio will be launched.
-- Part of the trick is to ensure your DLL isn't loaded for your initial RAD Studio launch (delete it ahead of time) and only available for the newly launched RAD Studio.
+- You can then run your DLL/BPL project and RAD Studio will be launched.
 - You will get a handful of startup errors when debugging the IDE within the IDE.  These are annoying, but safe to ignore.
-
+- See [docwiki](https://docwiki.embarcadero.com/RADStudio/en/Debugging_a_Wizard) for more info
 
 
 
