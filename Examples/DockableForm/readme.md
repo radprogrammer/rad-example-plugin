@@ -41,23 +41,25 @@ In this example, we call `ShowForm` via our `Execute` method, as seen below:
 
 ```Pascal
 
+
 procedure TSimpleWizard.ShowForm;
 var
   NTAServices:INTAServices270;
 begin
-  if not Assigned(DockableFormDetails) then
+  if not Assigned(MyDockableFormDetails) then
     Exit;
 
   if not Assigned(FDockableFormInstance) then
   begin
     if not Supports(BorlandIDEServices, INTAServices270, NTAServices) then
       Exit;
-    FDockableFormInstance := NTAServices.CreateDockableForm(DockableFormDetails);
+    FDockableFormInstance := NTAServices.CreateDockableForm(MyDockableFormDetails);
   end;
 
   FDockableFormInstance.Show;
   FDockableFormInstance.BringToFront;
 end;
+
 
 ````
 
@@ -70,15 +72,15 @@ IDE windows.
 The `Example.CustomFrame.pas` unit is an example custom frame to be used with our plugin.  There is nothing special about this frame - you can do most anything
 that you can normally do in your Frame code.
 
-I hope this helps clear up how to create and use **<span style="color:ide_orange">Dockable Forms</span>** within the RAD Studio IDE.  I am also doing this
+I hope this helps clear up how to create and use **<span style="color:ide_orange">Dockable Forms</span>** within the RAD Studio IDE!  I am also doing this
 to refresh my own memory as I do not do this task very often and the methods can be a bit confusing.  Thankfully, they are much better
 since `INTAServices270` was introduced.
 
 
-### Test it out
-- Open this project in **<span style="color:ide_violet">RAD Studio 11</span>** or later.
-- Right click on the project in the Project Manager and select `Install` which will build and then install the BPL
-- Click on `Help` menu, and then the `Help Wizards` child menu item.  All the custom menu items for installed `IOTAMenuWizard`s will be displayed
+### Test It Out:
+- Open the the `radExampleDockableForm.dproj` project in **<span style="color:ide_violet">RAD Studio 11</span>** or later.
+- Right click on project in the Project Manager and select `Install` which will build and then install the BPL
+- Click on `Help` menu, and then the `Help Wizards` child menu item.  All the custom menu items for installed `IOTAMenuWizard`'s will be displayed
 - Click the menu item named `Click Me for a demonstration` created by this wizard and an example dockable form will be displayed
 - The contents of the dockable form will be the frame defined in `Example.CustomFrame`
 - Make some changes to the frame and rebuild.  The BPL will be unloaded (the dockable form closed) and then the BPL will be rebuilt.
