@@ -1,4 +1,9 @@
-# ToolsAPI Example for RAD Studio
+# ToolsAPI Examples for RAD Studio
+
+
+----
+
+## BPL vs DLL
 
 If you're just getting started with plugin development in RAD Studio, one of the first architectural decisions that you will face is
 choosing between using **BPLs** or **DLLs** for your plugin.
@@ -71,6 +76,16 @@ first copy of Delphi is started. (Otherwise the DLL will be in use and you canno
 - You can then run your DLL/BPL project and RAD Studio will be launched.
 - You will get a handful of startup errors when debugging the IDE within the IDE.  These are annoying, but safe to ignore.
 - See [docwiki](https://docwiki.embarcadero.com/RADStudio/en/Debugging_a_Wizard) for more info
+
+
+----
+
+## Dockable Forms
+
+Another struggle for me with Plugin development has been working with dockable forms.  There are some really ancient examples out there but nothing
+that was easily grokable to me.  A second example project is in the `Examples\DockableForm` folder which can be used as a reference for quickly
+creating a dockable form in a plugin.  I have a library of ToolsAPI code that has built-up over the years but this distills the
+task down to the bare minimum and leverages recent improvements made to the ToolsAPI.
 
 
 
