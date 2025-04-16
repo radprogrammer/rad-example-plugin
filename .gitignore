@@ -81,4 +81,4 @@ __recovery/
 modules/
 
 # SonarQube
-/.scannerwork
+.scannerwork/
