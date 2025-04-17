@@ -84,8 +84,8 @@ first copy of Delphi is started. (Otherwise the DLL will be in use and you canno
 
 Another struggle for me with Plugin development has been working with dockable forms.  There are some really ancient examples out there but nothing
 that was easily grokable to me.  A second example project is in the `Examples\DockableForm` folder which can be used as a reference for quickly
-creating a dockable form in a plugin.  I have a library of ToolsAPI code that has built-up over the years but this distills the
-task down to the bare minimum and leverages recent improvements made to the ToolsAPI.
+creating a dockable form in a plugin leveraging the `INTAServices270` introduced in [Delphi 11 Alexandria](https://github.com/ideasawakened/DelphiKB/wiki/D28.ALEXANDRIA.11.0.0.0).  
+I have a library of ToolsAPI code that has built-up over the years but this example distills the task down to the bare minimum and leverages recent improvements made to the ToolsAPI.
 
 
 
