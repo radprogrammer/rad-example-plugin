@@ -49,6 +49,7 @@ uses
 function InitializeExampleWizard:IOTAWizard;
 begin
   Result := TExampleWizard.Create;
+  RegisterPackageWizard(Result);
 end;
 
 
